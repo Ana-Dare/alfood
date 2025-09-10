@@ -1,8 +1,8 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import IRestaurante from "../../interfaces/IRestaurante";
-import http from "../../http";
+import IRestaurante from "../../../interfaces/IRestaurante";
+import http from "../../../http";
 
 const FormularioRestaurante = () => {
   const parametros = useParams();
@@ -51,7 +51,7 @@ const FormularioRestaurante = () => {
         }}
       >
         <Typography variant="h6">Formulário de Restaurantes</Typography>
-        <Box component="form" sx={{ width: 100 }} onSubmit={aoSubmeterForm}>
+        <Box component="form" sx={{ width: "100%" }} onSubmit={aoSubmeterForm}>
           <TextField
             value={nomeRestaurante}
             onChange={(evento) => setNomeRestaurante(evento.target.value)}

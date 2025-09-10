@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import IRestaurante from "../../interfaces/IRestaurante";
+import IRestaurante from "../../../interfaces/IRestaurante";
 import TableContainer from "@mui/material/TableContainer";
 import Table from "@mui/material/Table";
 import TableHead from "@mui/material/TableHead";
@@ -21,14 +21,17 @@ const AdministracaoRestaurantes = () => {
   }, []);
 
   const excluir = (restauranteAhSerExcluido: IRestaurante) => {
-    axios.delete(`http://localhost:8000/api/v2/restaurantes/${restauranteAhSerExcluido.id}/`)
-    .then(() => {
-      const listaRestaurante = restaurantes.filter(restaurante => restaurante.id !== restauranteAhSerExcluido.id)
-      setRestaurantes([...listaRestaurante])
-    })
-
-
-  }
+    axios
+      .delete(
+        `http://localhost:8000/api/v2/restaurantes/${restauranteAhSerExcluido.id}/`
+      )
+      .then(() => {
+        const listaRestaurante = restaurantes.filter(
+          (restaurante) => restaurante.id !== restauranteAhSerExcluido.id
+        );
+        setRestaurantes([...listaRestaurante]);
+      });
+  };
 
   return (
     <TableContainer component={Paper}>
@@ -50,7 +53,11 @@ const AdministracaoRestaurantes = () => {
                 ]
               </TableCell>
               <TableCell>
-                <Button variant="outlined" color="error" onClick={() => excluir(restaurante)}>
+                <Button
+                  variant="outlined"
+                  color="error"
+                  onClick={() => excluir(restaurante)}
+                >
                   Excluir
                 </Button>
               </TableCell>

@@ -25,6 +25,12 @@ const PaginaBaseAdmin = () => {
             <Link component={RouterLink} to="/admin/restaurantes/novo">
               <Button sx={{ my: 2, color: "white" }}>Novo Restaurante</Button>
             </Link>
+            <Link component={RouterLink} to="/admin/pratos">
+              <Button sx={{ my: 2, color: "white" }}>Pratos</Button>
+            </Link>
+            <Link component={RouterLink} to="/admin/pratos/novo">
+              <Button sx={{ my: 2, color: "white" }}>Novo Prato</Button>
+            </Link>
           </Toolbar>
         </Container>
       </AppBar>
@@ -32,7 +38,7 @@ const PaginaBaseAdmin = () => {
       <Box>
         <Container maxWidth="lg" sx={{ mt: 1 }}>
           <Paper sx={{ p: 2 }}>
-            <Outlet/>
+            <Outlet />
           </Paper>
         </Container>
       </Box>
